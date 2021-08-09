@@ -1,18 +1,95 @@
 [
-{"question":"This is a Sample Question 1?",
+{"question":"1. Does the order of input and output ports in the argument of module matters?",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"Yes",
+            "b":"No",
+            "c":"May matter in some situation",
+            "d":"May not matter in some situation"
           },
 "correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
+            
+{"question":"2. Which of the following loops are supported by verilog?",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"If-else loop",
+            "b":"For loop",
+            "c":"While loop",
+            "d":"All of these"
           },
-"correctAnswer":"c"} 
+"correctAnswer":"c"}, 
+            
+{"question":"3. What defines the beginning and end of a loop",
+"answers":{
+            "a":"Begin----end",
+            "b":"Curly brackets ()",
+            "c":"None of these",
+            "d":"Both of them"
+          },
+"correctAnswer":"a"},
+            
+{"question":"4. What defines high impedance state or floating state in verilog?",
+"answers":{
+            "a":"1",
+            "b":"X",
+            "c":"Z",
+            "d":"Both X and Z"
+          },
+"correctAnswer":"c"},  
+            
+ 
+{"question":" 5. In the following figure A is input and B is output of inverter and C is clock. Tell whether inverter is working synchronously or asynchronously? <img src='images/syn.jpg'>",
+"answers":{
+            "a":"Asynchronous",
+            "b":"Synchronous",
+            "c":"Unpredictable",
+            "d":"Sometimes synchronous and sometimes asynchronous"
+          },
+"correctAnswer":"a"},
+            
+{"question":"6. In the above figure, tell whether inverter is working on positive edge or negative edge of clock? <img src='syn.jpg'>",
+"answers":{
+            "a":"Negative edge",
+            "b":"Positive edge",
+            "c":"Both on positive edge and negative edge",
+            "d":"Middle of positive and negative edge of clock"
+          },
+"correctAnswer":"c"},  
+            
+ 
+{"question":"7. In the following figure tell whether reset is synchronous or asynchronous? <img src='asyn.jpg'>",
+"answers":{
+            "a":"Asynchronous",
+            "b":"Synchronous",
+            "c":"Unpredictable",
+            "d":"Sometimes synchronous and sometimes asynchronous"
+          },
+"correctAnswer":"a"},
+            
+{"question":"8. What is the similar system task in verilog as printf in C?",
+"answers":{
+            "a":"$monitor",
+            "b":"$display",
+            "c":"$print",
+            "d":"All of these"
+          },
+"correctAnswer":"c"},  
+            
+
+{"question":"9. In the figure given in ques7, tell whether it is a positive edge reset or negative edge?",
+"answers":{
+            "a":"Both positive and negative edge reset",
+            "b":"Negative edge reset",
+            "c":"Positive edge",
+            "d":"Unpredictable"
+          },
+"correctAnswer":"a"},
+            
+{"question":"10. Can we include one source file in another in verilog?",
+"answers":{
+            "a":"No",
+            "b":"Yes using `include",
+            "c":"Yes using `define",
+            "d":"Yes by just writing the name of file in another file"
+          },
+"correctAnswer":"c"}           
+            
 ]
