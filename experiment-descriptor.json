@@ -1,3 +1,4 @@
+
 {
   "unit-type": "lu",
   "label": "",
@@ -10,6 +11,13 @@
       "target": "theory.html",
       "source": "theory.md",
       "label": "Theory",
+      "unit-type": "task",
+      "content-type": "text"
+    },
+    {
+      "target": "objective.html",
+      "source": "objective.md",
+      "label": "Objective",
       "unit-type": "task",
       "content-type": "text"
     },
