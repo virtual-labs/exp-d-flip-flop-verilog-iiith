@@ -55,7 +55,7 @@
 "correctAnswer":"c"},  
             
  
-{"question":"7. In the following figure tell whether reset is synchronous or asynchronous? <img src='imges/asyn.jpg'>",
+{"question":"7. In the following figure tell whether reset is synchronous or asynchronous? <img src='images/asyn.jpg'>",
 "answers":{
             "a":"Asynchronous",
             "b":"Synchronous",
