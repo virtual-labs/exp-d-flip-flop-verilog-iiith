@@ -43,9 +43,9 @@ The gate is a control input which determines the flow of electric current betwee
 
 β is the MOS transistor gain factor which depends both on process parameters and geometry parameters.
 
-    		    β = k(W/L)
-    		where K is the factor which shows process dependencyand W & L shows geometry dependency
-    		    For NMOS, gain factor is denoted by βn and for PMOS, gain factor is denoted by βp.
+      β = k(W/L)
+      where K is the factor which shows process dependencyand W & L shows geometry dependency
+      For NMOS, gain factor is denoted by βn and for PMOS, gain factor is denoted by βp.
     	
 
 
