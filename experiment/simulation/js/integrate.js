@@ -63,7 +63,6 @@ function comp2Input0() {
     const container = document.getElementById("diagram");
     container.insertAdjacentElement("afterbegin", d);
     jsplumbInstance.draggable(id, { "containment": true });
-    listInput.push(d1);
     addInstanceFinalInput(id);
 }
 
