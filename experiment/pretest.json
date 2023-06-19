@@ -10,7 +10,7 @@
         "correctAnswer": "a"
     },
     {
-        "question": "2. How to implement a D flip flop using SR flip flop?",
+        "question": "2. How to implement a D flip flop using JK flip flop?",
         "answers": {
             "a": "S=D_bar, R=D",
             "b": "S=D, R=D_bar",

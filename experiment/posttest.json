@@ -15,7 +15,7 @@
             "c":"While loop",
             "d":"All of these"
           },
-"correctAnswer":"c"}, 
+"correctAnswer":"d"}, 
             
 {"question":"3. What defines the beginning and end of a loop",
 "answers":{
@@ -43,7 +43,7 @@
             "c":"Unpredictable",
             "d":"Sometimes synchronous and sometimes asynchronous"
           },
-"correctAnswer":"a"},
+"correctAnswer":"b"},
             
 {"question":"6. In the above figure, tell whether inverter is working on positive edge or negative edge of clock? <img src='images/syn.jpg'>",
 "answers":{
@@ -52,7 +52,7 @@
             "c":"Both on positive edge and negative edge",
             "d":"Middle of positive and negative edge of clock"
           },
-"correctAnswer":"c"},  
+"correctAnswer":"b"},  
             
  
 {"question":"7. In the following figure tell whether reset is synchronous or asynchronous? <img src='images/asyn.jpg'>",
