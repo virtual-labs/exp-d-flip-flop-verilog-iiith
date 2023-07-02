@@ -1,11 +1,13 @@
 .v-datalist-container {
   min-height: 31.25rem;
+  height: 50rem;
   width: 100%;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
+  overflow: auto; /* Enable scrolling */
 }
 
 #diagram {
