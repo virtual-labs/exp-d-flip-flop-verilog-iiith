@@ -1,58 +1,101 @@
-**CMOS INVERTER**
+As we have seen in introduction what verilog is all about, why verilog was developed, what is its need, what is the advantages using verilog, now we are ready to make some digital designs using verilog. We will learn three basic designs which are listed below in this experiment.  
 
-In the transistor level design of CMOS inverter consists of nmos and pmos transistor in series. The PMOS transistor is connected between V<sub>dd</sub> and output node, whereas the NMOS is connected betweeen the output node and gnd.
+1. T-Flip Flop  
+2. Counter  
+3. T-Flip Flop usind D-Flip Flop  
 
-**WORKING OF CMOS INVERTER**
+**T-FLIP FLOP**
 
-Before knowing the working of CMOS inverter we will see the regions of operation of transistor so that we can understand what is actually happening inside the inverter. MOS transistors have three regions of operations : 1) cut-off region 2) linear region 3) saturation region
+The verilog code for T-flip flop is given below with explaination of different parts of code.  
 
-The transistor is said to be in cut-off region when V<sub>gs</sub> < V<sub>t</sub>. V<sub>gs</sub> is the voltage applied at gate with respect to source and V<sub>t</sub> is the threshhold voltage below which the transistor does not work. So for transistor to work V<sub>gs</sub> - V<sub>t</sub> should be greater than zero always.
+<img src="images/t.jpg">  
 
-The transistor is in linear region when V<sub>gs</sub> - V<sub>t</sub> > Vds where Vds is the voltage at drain with respect to source.
-The transistor is said to be in saturation region when v<sub>gs</sub> - V<sub>t</sub> < V<sub>ds</sub>
+Some of the following points which are not explained in detail in the above image are explained here below  
 
-The transfer characteristic(i.e. the output voltage vs input voltage) is shown in the figure below. The operation is divided into 5 region depending on the range of input voltage(Move your mouse over the region to know about the region). The output voltage in every region is obtained by equating drain to source current of pmos and nmos.
+**MODULE**  
 
-<img src="images/DC_CHARC.jpg">
+Verilog provides the concept of a module. A module is the basic building block in verilog. A module can be an element or a collection of lower-level design blocks. Typically, elements are grouped int mmodules to provide common functonality that is used at many places in the design. A module provides the necessary functionality to the higher-level block through its port interface (inputs and outputs), but hides the internal implementation. This allows the designer to modify module internals without affecting the rest of the design.  
 
-**EFFECT OF W/L RATIO ON OUTPUT WAVEFORM**
 
-Before proceeding to the study of effect please read the definition of β (gain factor).
+**MODULE NAME**  
 
-W/L ratio is directly proportional to β. The ratio βn/βp is crucial in determinig the transfer characteristic of the inverter. When the ratio is increased the transition shifts from left to right, but the output voltage transition remains sharp. For CMOS the ratio is desired to be 1 so that it requires equal time to charge and discharge.
+Module name can be anything accordig to our own choice. It is just another name consisting of characters and numbers. It is used when module is instantiated in another module. We instantiate by calling the module using the name given to it. Instiating the module is explained in the third example code given below.  
 
-**EFFECT OF CAPACITANCE ON THE RISE AND FALL TIME**
 
-The rise time is defined as the time required to charge the capacitor from 10% to 90% and fall time is defined as the time required for the capacitor to discharge from 90% to 10%. How the rise time and the fall time is calculated is shown in the figure below :
+**ARGUMENTS IN MODULE**  
 
-Greater value of capacitor implies larger rise and fall time, which furthur implies large delay. The rise time and fall time are directly proportional to the capacitance. Therefore, greater the value of capacitance, greater will be the time taken for rising and falling.
+Just as in C function we give some arguments to function, here also we give arguments which consists of all the input and output ports which that module is using to take input fromthe user and give output to the user.  
 
-**PSEUDO NMOS**
+**INPUT-OUTPUT PORTS - I/O PORTS**  
 
-The gate of p-device is permanently grounded which is equivalent to use of NMOS in depletion mode
+Input and Output ports are the ports through user can give inputs and take outputs. Whatever arguments we have given to module should be mentioned inside the module that which arguments correspond to input ports and which correspond to output ports as done in the image above.   
 
-**SOME BASIC DEFINITIONS AND THEORY**
+**DATA TYPES**
 
-**TRANSISTOR**
+Here in this example we have used *reg* data type and in upcoming examples we will be using some more as *wire* and all. So to know about various kinds of operators in verilog just read the following chart carefully.  
 
-Basically transistor consistes of three parts - GATE, SOURCE and DRAIN as shown in figure below:
+<img src="images/data.jpg">
 
-The gate is a control input which determines the flow of electric current between source and drain. Physically drain and source are equivalent and the two types of transistor i.e., n-transistor and p-transistor differ only in the way electric current flows between source and drain according to the different values applied at the controlling gate input. In n-transistor when logic 1 is aplied to gate, the current flows bwetween source and drain while no current flows when logic 0 is applied. The p-transistor works just the opposite way - the current flows between source and drain when logic 0 is applied and no current on logic 1.
+**ALWAYS BLOCK**
 
-**β - GAIN FACTOR**
+All statements inside an always statement consists of always block. The always statement starts at time 0 and executes the always statement in the looping fashion continuously according to the condition given in the bracket of always block after "@".  
 
-β is the MOS transistor gain factor which depends both on process parameters and geometry parameters.
+**POSEDGE CLOCK**  
 
-      β = k(W/L)  
-      where K is the factor which shows process dependencyand W & L shows geometry dependency  
-      For NMOS, gain factor is denoted by βn and for PMOS, gain factor is denoted by βp.  
-    	
+Posedge clock is written in the bracket of always statement means that the statements inside the always block will be executed only at the positive edge of the clock, that is, only when clock goes from low level to high level or generally 0V level to 5V level.  
 
-**DELAY**
 
-Delay time is the time taken for the input transistion (50% level) into output (50% level). The single gate delay is given by the average of rise time and fall time, so delay also is directly proportional to the capacitance value
+**NEGEDGE RESET**  
 
-**DEPLETION MODE**
+Reset is also a pulse here when the negative edge of reset is encountered then asynchronously that means irrespective of the clock the output will be set to zero. Negative edge means reset will go from high level to low level.  
 
-Using NMOS in depletion region means increasing negative voltage on the gate to reduce current flow or we can say to deplete the channel of free carriers which are electrons in n-channel.
+OPERATORS AND OTHER LEXICAL CONVENTIONS  
+
+~ and ! opertars are used in the above code. Apart from these there are various operators, numbers and identifiers provided by verilog. All of these are shown in figure below  
+
+<img src="images/lex.jpg">  
+
+
+**LOOPS**  
+
+Verilog also supports *for*, *if-else*, *while* loops as in C. In the above example if and else are used. The syntax for all loops is same as C just the difference is that they have a *begin* and *end* to denote the statements inside a loop.  
+
+**BLOCKING AND NON-BLOCKING ASSIGNMENT**  
+
+Blocking statement is specified by = operator and Non-Blocking statement is specified by <= operator. Suppose there are two statements  
+*a = b*
+*b = a*
+Then both a and b will get values equal to b but if in place of equal to sign we place less than equal to operator, that is, if we use non blocking assignment then bith statement will be executed at same time, that is a will get the value of b and b will get the value of a at the same time so the values will be swapped. Hence statements with non-blocking assignment is started executing simultaneously.  
+
+**COUNTER**
+
+The verilog code for counter is given below with explaination of different parts of code.  
+
+<img sr="images/c.jpg">  
+
+In tha above code, everything is pretty much explained in the box on right hand side given above. Just the *assign* statement is new so it is explained here. When we use assign before a statement like in above example Q=tmp, it means Q will be updated as soon as the value in tmp register changes whether or not it comes in the execution sequence or not. This is the speciality of assign keyword.  
+
+**T_FLIP FLOP USING D-FLIP FLOP**  
+
+The verilog code for the T-flip flop using D-flip flop is given below with explaination of different parts of code.  
+
+<img src="images/td.jpg">  
+
+
+In the above example instantiation of module is used which is explained in detail here.  
+
+**INSTANTIATION OF MODULE**  
+
+We does not use module inside a module, thats why we instantiate it that means we call it as we call some function. One important thing to not while instantiating is that we call module with same name as we have given it while coding for it separately but when we are using it in other module we give it some other name and if it is instantiated more than one time then we have to give different name each time. Here in above example we have called the module with same name D_FF but given a new name dff0.  
+
+**NOT - VERILOG PROVIDED PRIMITIVE**  
+
+There are many primitives already defined in verilog which provides some particular functionalities. not is one of them. In not first argument is output value and second is input value. So in above example d is output and q is input.  
+
+Verilog also provides us with some compiler directives and system tasks. These are not used in above programs but if you want to know about these functionalities, read the following flowcharts.  
+
+<img src="images/task.jpg">  
+
+<img src="images/direc.jpg">  
+
 
